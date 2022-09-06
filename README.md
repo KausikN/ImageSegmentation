@@ -24,13 +24,13 @@
 Background-Foreground Segmentation
  - Histogram
     - Mean-Max
-        ![Histogram Mean-Max](GeneratedVisualisations/Test.jpg)
+        ![Histogram Mean-Max](GeneratedVisualisations/Segmentation_Histogram_MeanMax.png)
  - Filters
     - Laplace
-        ![Filters Laplace](GeneratedVisualisations/Test.jpg)
+        ![Filters Laplace](GeneratedVisualisations/Segmentation_Filters_Laplace.png)
  - Cluster
     - KMeans
-        ![Cluster KMeans](GeneratedVisualisations/Test.jpg)
+        ![Cluster KMeans](GeneratedVisualisations/Segmentation_Cluster_KMeans.png)
 
 # AI Methods
  - In Dev, stay tuned :-)

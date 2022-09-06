@@ -12,9 +12,9 @@ Inputs:
 
 # Imports
 # Segmenter Imports
-from Library.Basic import ImageSegmentation_Histogram
-from Library.Basic import ImageSegmentation_Filters
-from Library.Basic import ImageSegmentation_Cluster
+from SegmentationMethods.Basic import ImageSegmentation_Histogram
+from SegmentationMethods.Basic import ImageSegmentation_Filters
+from SegmentationMethods.Basic import ImageSegmentation_Cluster
 # Dataset Imports
 from Data.Datasets.Formulas import DatasetUtils as DatasetUtils_Formulas
 

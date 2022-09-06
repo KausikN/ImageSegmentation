@@ -1,0 +1,16 @@
+{
+    "PROJECT_NAME": "ImageSegmentation",
+    "PROJECT_LINK": "https://github.com/KausikN/ImageSegmentation",
+
+    "PROJECT_DESC": "Image Segmentation Algorithms and Models",
+
+    "PROJECT_README": "README.md",
+
+    "PROJECT_MODES": [
+        "Single Image Segmentation",
+        "Video Feed Segmentation",
+        "Dataset Segmentation Run",
+        "Dataset Segmentation Test",
+        "Image Process"
+    ]
+}

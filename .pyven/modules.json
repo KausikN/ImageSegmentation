@@ -1,0 +1,367 @@
+{
+    "name": "ImageSegmentation",
+    "repoLink": "https://github.com/KausikN/ImageSegmentation",
+    "localPath": "E:/Github Codes and Projects/Projects/ImageSegmentation",
+    "modules": {
+        "app.py": {
+            "name": "app",
+            "type": "local",
+            "link": "https://github.com/KausikN/ImageSegmentation/blob/master/app.py",
+            "parentDir": "E:/Github Codes and Projects/Projects/ImageSegmentation",
+            "subDir": "",
+            "dependencies": [
+                "os.py",
+                "streamlit.py",
+                "json.py",
+                "time.py",
+                "*.py",
+                "*.py",
+                "*.py"
+            ]
+        },
+        "app_Dataset.py": {
+            "name": "app_Dataset",
+            "type": "local",
+            "link": "https://github.com/KausikN/ImageSegmentation/blob/master/app_Dataset.py",
+            "parentDir": "E:/Github Codes and Projects/Projects/ImageSegmentation",
+            "subDir": "",
+            "dependencies": [
+                "os.py",
+                "cv2.py",
+                "json.py",
+                "streamlit.py",
+                "tqdm.py",
+                "*.py",
+                "*.py"
+            ]
+        },
+        "ImageSegmentation.py": {
+            "name": "ImageSegmentation",
+            "type": "local",
+            "link": "https://github.com/KausikN/ImageSegmentation/blob/master/ImageSegmentation.py",
+            "parentDir": "E:/Github Codes and Projects/Projects/ImageSegmentation",
+            "subDir": "",
+            "dependencies": [
+                "ImageSegmentation_Histogram.py",
+                "ImageSegmentation_Filters.py",
+                "ImageSegmentation_Cluster.py",
+                "DatasetUtils.py"
+            ]
+        },
+        "Data/Datasets/Formulas/DatasetUtils.py": {
+            "name": "DatasetUtils",
+            "type": "local",
+            "link": "https://github.com/KausikN/ImageSegmentation/blob/master/Data/Datasets/Formulas/DatasetUtils.py",
+            "parentDir": "E:/Github Codes and Projects/Projects/ImageSegmentation",
+            "subDir": "Data/Datasets/Formulas",
+            "dependencies": [
+                "io.py",
+                "os.py",
+                "cv2.py",
+                "zipfile.py",
+                "functools.py",
+                "numpy.py",
+                "pandas.py",
+                "matplotlib/pyplot.py",
+                "Image.py",
+                "tqdm.py"
+            ]
+        },
+        "SegmentationMethods/Basic/ImageSegmentation_Cluster.py": {
+            "name": "ImageSegmentation_Cluster",
+            "type": "local",
+            "link": "https://github.com/KausikN/ImageSegmentation/blob/master/SegmentationMethods/Basic/ImageSegmentation_Cluster.py",
+            "parentDir": "E:/Github Codes and Projects/Projects/ImageSegmentation",
+            "subDir": "SegmentationMethods/Basic",
+            "dependencies": [
+                "cv2.py",
+                "numpy.py",
+                "matplotlib/pyplot.py",
+                "KMeans.py"
+            ]
+        },
+        "SegmentationMethods/Basic/ImageSegmentation_Filters.py": {
+            "name": "ImageSegmentation_Filters",
+            "type": "local",
+            "link": "https://github.com/KausikN/ImageSegmentation/blob/master/SegmentationMethods/Basic/ImageSegmentation_Filters.py",
+            "parentDir": "E:/Github Codes and Projects/Projects/ImageSegmentation",
+            "subDir": "SegmentationMethods/Basic",
+            "dependencies": [
+                "cv2.py",
+                "numpy.py",
+                "matplotlib/pyplot.py",
+                "ndimage.py"
+            ]
+        },
+        "SegmentationMethods/Basic/ImageSegmentation_Histogram.py": {
+            "name": "ImageSegmentation_Histogram",
+            "type": "local",
+            "link": "https://github.com/KausikN/ImageSegmentation/blob/master/SegmentationMethods/Basic/ImageSegmentation_Histogram.py",
+            "parentDir": "E:/Github Codes and Projects/Projects/ImageSegmentation",
+            "subDir": "SegmentationMethods/Basic",
+            "dependencies": [
+                "cv2.py",
+                "numpy.py",
+                "matplotlib/pyplot.py"
+            ]
+        },
+        "Utils/ImageUtils.py": {
+            "name": "ImageUtils",
+            "type": "local",
+            "link": "https://github.com/KausikN/ImageSegmentation/blob/master/Utils/ImageUtils.py",
+            "parentDir": "E:/Github Codes and Projects/Projects/ImageSegmentation",
+            "subDir": "Utils",
+            "dependencies": [
+                "io.py",
+                "cv2.py",
+                "numpy.py",
+                "matplotlib/pyplot.py",
+                "Image.py"
+            ]
+        },
+        "Utils/ModelVis.py": {
+            "name": "ModelVis",
+            "type": "local",
+            "link": "https://github.com/KausikN/ImageSegmentation/blob/master/Utils/ModelVis.py",
+            "parentDir": "E:/Github Codes and Projects/Projects/ImageSegmentation",
+            "subDir": "Utils",
+            "dependencies": [
+                "cv2.py",
+                "matplotlib/pyplot.py",
+                "visualkeras.py",
+                "load_model.py",
+                "plot_model.py",
+                "visualizer.py",
+                "ImageFont.py"
+            ]
+        },
+        "Utils/VideoUtils.py": {
+            "name": "VideoUtils",
+            "type": "local",
+            "link": "https://github.com/KausikN/ImageSegmentation/blob/master/Utils/VideoUtils.py",
+            "parentDir": "E:/Github Codes and Projects/Projects/ImageSegmentation",
+            "subDir": "Utils",
+            "dependencies": [
+                "pafy.py",
+                "requests.py",
+                "*.py"
+            ]
+        },
+        "pafy.py": {
+            "name": "pafy",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "io.py": {
+            "name": "io",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "os.py": {
+            "name": "os",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "matplotlib/pyplot.py": {
+            "name": "pyplot",
+            "type": "inbuilt",
+            "link": "",
+            "parentDir": "E:/Github Codes and Projects/Projects/ImageSegmentation",
+            "subDir": "matplotlib",
+            "dependencies": []
+        },
+        "ndimage.py": {
+            "name": "ndimage",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "visualkeras.py": {
+            "name": "visualkeras",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "ImageSegmentation_Histogram.py": {
+            "name": "ImageSegmentation_Histogram",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "ImageSegmentation_Cluster.py": {
+            "name": "ImageSegmentation_Cluster",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "numpy.py": {
+            "name": "numpy",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "visualizer.py": {
+            "name": "visualizer",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "streamlit.py": {
+            "name": "streamlit",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "plot_model.py": {
+            "name": "plot_model",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "tqdm.py": {
+            "name": "tqdm",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "zipfile.py": {
+            "name": "zipfile",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "ImageSegmentation_Filters.py": {
+            "name": "ImageSegmentation_Filters",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "cv2.py": {
+            "name": "cv2",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "functools.py": {
+            "name": "functools",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "requests.py": {
+            "name": "requests",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "KMeans.py": {
+            "name": "KMeans",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "DatasetUtils.py": {
+            "name": "DatasetUtils",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "time.py": {
+            "name": "time",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "ImageFont.py": {
+            "name": "ImageFont",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "load_model.py": {
+            "name": "load_model",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "Image.py": {
+            "name": "Image",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "pandas.py": {
+            "name": "pandas",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "*.py": {
+            "name": "*",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        },
+        "json.py": {
+            "name": "json",
+            "type": "missing",
+            "link": "",
+            "parentDir": "",
+            "subDir": "",
+            "dependencies": []
+        }
+    }
+}

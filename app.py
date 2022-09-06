@@ -1,23 +1,70 @@
 """
-Streamlit App
+Stream lit GUI for hosting ImageSegmentation
 """
 
 # Imports
 import os
-import time
-import json
 import streamlit as st
+import json
+import time
 
 from ImageSegmentation import *
 from Utils.VideoUtils import *
 from Utils.ImageUtils import *
 
 # Main Vars
-DEFAULT_IMAGE_PATH = "Data/InputImages/Test.PNG"
+config = json.load(open("./StreamLitGUI/UIConfig.json", "r"))
+
+# Main Functions
+def main():
+    # Create Sidebar
+    selected_box = st.sidebar.selectbox(
+    "Choose one of the following",
+        tuple(
+            [config["PROJECT_NAME"]] + 
+            config["PROJECT_MODES"]
+        )
+    )
+    
+    if selected_box == config["PROJECT_NAME"]:
+        HomePage()
+    else:
+        correspondingFuncName = selected_box.replace(" ", "_").lower()
+        if correspondingFuncName in globals().keys():
+            globals()[correspondingFuncName]()
+ 
+
+def HomePage():
+    st.title(config["PROJECT_NAME"])
+    st.markdown("Github Repo: " + "[" + config["PROJECT_LINK"] + "](" + config["PROJECT_LINK"] + ")")
+    st.markdown(config["PROJECT_DESC"])
+
+    # st.write(open(config["PROJECT_README"], "r").read())
+
+#############################################################################################################################
+# Repo Based Vars
+CACHE_PATH = "StreamLitGUI/CacheData/Cache.json"
+
+DEFAULT_IMAGE_PATH = "Data/InputImages/Test.jpg"
 TEMP_PATH = "Data/Temp/"
 MODELS_DIR = "Models/"
 
 DEFAULT_CMAP = "gray"
+
+# Util Vars
+CACHE = {}
+
+# Util Functions
+def LoadCache():
+    global CACHE
+    CACHE = json.load(open(CACHE_PATH, "r"))
+
+def SaveCache():
+    global CACHE
+    json.dump(CACHE, open(CACHE_PATH, "w"), indent=4)
+
+# Main Functions
+
 
 # UI Functions
 def UI_LoadSegAlgo():
@@ -267,8 +314,8 @@ def UI_DisplayVisData(OutData):
         st.markdown(f"### {k}")
         st.write(OutData["data"][k])
 
-# Main Functions
-def image_segmentation_single_image():
+# Repo Based Functions
+def single_image_segmentation():
     # Title
     st.markdown("# Segmentation - Single Image")
 
@@ -302,7 +349,7 @@ def image_segmentation_single_image():
         # Display Visualisations
         UI_DisplayVisData(OutData)
 
-def image_segmentation_video_feed():
+def video_feed_segmentation():
     # Title
     st.markdown("# Segmentation - Video Feed")
 
@@ -382,7 +429,7 @@ def image_segmentation_video_feed():
                     for i in range(len(OutData["figs"]["pyplot"][k])):
                         UI_Elements["vis"]["plots"][k]["cols"][i].pyplot(OutData["figs"]["pyplot"][k][i])
 
-def image_segmentation_dataset_run():
+def dataset_segmentation_run():
     # Title
     st.markdown("# Segmentation - Dataset Run")
 
@@ -454,7 +501,7 @@ def image_segmentation_dataset_run():
         }
         st.write(Times)
 
-def image_segmentation_dataset_test():
+def dataset_segmentation_test():
     # Title
     st.markdown("# Segmentation - Dataset Test")
 
@@ -534,30 +581,8 @@ def image_process():
     USERINPUT_Image = UI_LoadImage()
     # Clean and Edit Image
     USERINPUT_Image = UI_ImageEdit(USERINPUT_Image)
-
-# Mode Vars
-MODES = {
-    "Image Segementation - Single Image": image_segmentation_single_image,
-    "Image Segmentation - Video Feed": image_segmentation_video_feed,
-    "Image Segementation - Dataset Run": image_segmentation_dataset_run,
-    "Image Segementation - Dataset Test": image_segmentation_dataset_test,
-    "Image Process": image_process
-}
-
-# App Functions
-def app_main():
-    # Title
-    st.markdown("# MTech Project")
-    # Mode
-    USERINPUT_Mode = st.sidebar.selectbox(
-        "Select Mode",
-        list(MODES.keys())
-    )
-    MODES[USERINPUT_Mode]()
-
-# RunCode
-if __name__ == "__main__":
-    # Assign Objects
     
-    # Run Main
-    app_main()
+#############################################################################################################################
+# Driver Code
+if __name__ == "__main__":
+    main()

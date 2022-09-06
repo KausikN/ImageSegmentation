@@ -1,0 +1,19 @@
+{
+    "repo_name": "ImageSegmentation",
+    "requirements": [
+        "streamlit",
+        "opencv_python_headless",
+        "requests",
+        "numpy",
+        "matplotlib",
+        "pandas",
+        "pafy",
+        "Pillow",
+        "scikit_learn",
+        "scipy",
+        "keras",
+        "tqdm",
+        "visualkeras",
+        "keras_visualizer"
+    ]
+}

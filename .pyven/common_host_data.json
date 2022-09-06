@@ -1,0 +1,11 @@
+{
+    "files_to_download": [
+        "StreamLitGUI/",
+        "app.py",
+        "app_Dataset.py",
+        "ImageSegmentation.py",
+        "Data/",
+        "SegmentationMethods/",
+        "Utils/"
+    ]
+}
