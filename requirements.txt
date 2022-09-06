@@ -5,6 +5,7 @@ numpy
 matplotlib
 pandas
 pafy
+youtube_dl
 Pillow
 scikit_learn
 scipy
