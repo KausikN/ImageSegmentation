@@ -5,6 +5,7 @@ Inputs:
  - I : Image (Height, Width, Channels)
     - Values for each channel in each pixel
     - Values in range [0, 1]
+Outputs:
  - I_map : Segmentation Map (Height, Width, Classes)
     - Probability values for each class in each pixel
     - Values in range [0, 1]
