@@ -135,3 +135,26 @@ def VideoUtils_GetVideoLoader(
     loader = VideoUtils_VideoLoader(vid, max_frames)
 
     return loader
+
+def VideoUtils_SaveFrames2Video(frames, pathOut, fps=20, size=None):
+    '''
+    VideoUtils - Save Frames to Video
+    '''
+    if os.path.splitext(pathOut)[-1] == ".gif":
+        
+        frames_images = [Image.fromarray(np.array(frame*255, dtype=np.uint8)) for frame in frames]
+        extraFrames = []
+        if len(frames_images) > 1: extraFrames = frames_images[1:]
+        frames_images[0].save(pathOut, save_all=True, append_images=extraFrames, format="GIF", loop=0)
+    else:
+        # if size is None: size = (640, 480)
+        # frames = [np.array(frame*255, dtype=int) for frame in frames]
+        # frames = [ResizeImage_Pad(frame, size=size[::-1]) for frame in frames]
+        if size is None: size = (frames[0].shape[1], frames[0].shape[0])
+        frames = [np.array(frame*255, dtype=np.uint8) for frame in frames]
+        codec = cv2.VideoWriter_fourcc(*'AVC1')
+        out = cv2.VideoWriter(pathOut, codec, fps, size)
+        for frame in frames:
+            out.write(frame)
+        # out.close()
+        out.release()

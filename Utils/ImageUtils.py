@@ -4,6 +4,7 @@ Image Utils
 
 # Imports
 import io
+import os
 import cv2
 import numpy as np
 from PIL import Image
@@ -24,6 +25,7 @@ def ImageUtils_SaveImage(I, path):
     '''
     Save Image
     '''
+    if not os.path.exists(os.path.dirname(path)): os.makedirs(os.path.dirname(path))
     cv2.imwrite(path, I)
 
 def ImageUtils_LoadMap(path):

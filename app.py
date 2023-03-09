@@ -43,12 +43,15 @@ def HomePage():
 
 #############################################################################################################################
 # Repo Based Vars
-CACHE_PATH = "StreamLitGUI/CacheData/Cache.json"
-
-DEFAULT_IMAGE_PATH = "Data/InputImages/Test.jpg"
-TEMP_PATH = "Data/Temp/"
-MODELS_DIR = "Models/"
-
+PATHS = {
+    "cache": "StreamLitGUI/CacheData/Cache.json",
+    "default": {
+        "example": {
+            "image": "Data/InputImages/Test.jpg"
+        }
+    },
+    "temp": "Data/Temp/"
+}
 DEFAULT_CMAP = "gray"
 
 # Util Vars
@@ -57,11 +60,11 @@ CACHE = {}
 # Util Functions
 def LoadCache():
     global CACHE
-    CACHE = json.load(open(CACHE_PATH, "r"))
+    CACHE = json.load(open(PATHS["cache"], "r"))
 
 def SaveCache():
     global CACHE
-    json.dump(CACHE, open(CACHE_PATH, "w"), indent=4)
+    json.dump(CACHE, open(PATHS["cache"], "w"), indent=4)
 
 # Main Functions
 
@@ -139,15 +142,14 @@ def UI_LoadImage():
     USERINPUT_LoadType = st.selectbox("Load Type", ["Examples", "Upload File", "Datasets"])
     if USERINPUT_LoadType == "Examples":
         # Load Filenames from Default Path
-        EXAMPLES_DIR = os.path.dirname(DEFAULT_IMAGE_PATH)
-        # EXAMPLES_DIR = "Data/InputImages/"
+        EXAMPLES_DIR = os.path.dirname(PATHS["default"]["example"]["image"])
         EXAMPLE_FILES = os.listdir(EXAMPLES_DIR)
         USERINPUT_ImagePath = st.selectbox("Select Example File", EXAMPLE_FILES)
         USERINPUT_ImagePath = os.path.join(EXAMPLES_DIR, USERINPUT_ImagePath)
         USERINPUT_Image = open(USERINPUT_ImagePath, "rb").read()
     elif USERINPUT_LoadType == "Upload File":
         USERINPUT_Image = st.file_uploader("Upload Image", type=["jpg", "png", "PNG", "jpeg", "bmp"])
-        if USERINPUT_Image is None: USERINPUT_Image = open(DEFAULT_IMAGE_PATH, "rb")
+        if USERINPUT_Image is None: USERINPUT_Image = open(PATHS["default"]["example"]["image"], "rb")
         USERINPUT_Image = USERINPUT_Image.read()
     else:
         # Select Dataset
@@ -237,7 +239,7 @@ def UI_ImageEdit(USERINPUT_Image):
     # HIST_PLOT = ImageUtils_PlotImageHistogram(I_final)
     # st.plotly_chart(HIST_PLOT)
     # Save Image to Temp
-    TempImagePath = TEMP_PATH + "CleanedImage.png"
+    TempImagePath = os.path.join(PATHS["temp"], "CleanedImage.png")
     ImageUtils_SaveImage(I_final, TempImagePath)
     USERINPUT_Image = open(TempImagePath, "rb").read()
     USERINPUT_Image = ImageUtils_Bytes2Array(USERINPUT_Image)

@@ -8,12 +8,10 @@
         "matplotlib",
         "pandas",
         "pafy",
+        "youtube_dl",
         "Pillow",
         "scikit_learn",
         "scipy",
-        "keras",
-        "tqdm",
-        "visualkeras",
-        "keras_visualizer"
+        "tqdm"
     ]
 }
